@@ -4,12 +4,28 @@ public class Food {
 	private Integer food_code;
 	private String display_name;
 	
+	public enum StatoPreparazione {
+		DA_PREPARARE,
+		IN_CORSO,
+		PREPARATO,
+	}
+	private StatoPreparazione preparazione;
+	
 	public Food(Integer food_code, String display_name) {
 		super();
 		this.food_code = food_code;
 		this.display_name = display_name;
+		this.setPreparazione(StatoPreparazione.DA_PREPARARE);
 	}
-	
+
+	public StatoPreparazione getPreparazione() {
+		return preparazione;
+	}
+
+	public void setPreparazione(StatoPreparazione preparazione) {
+		this.preparazione = preparazione;
+	}
+
 	public Integer getFood_code() {
 		return food_code;
 	}
